@@ -1,10 +1,10 @@
-In this project, let's build a **CoWIN Dashboard** by applying the concepts we have learned till now.
+In this project, I have built a **CoWIN Dashboard App** by applying the concepts I have learned till now.
 
-### Refer to the images below:
+### Refer to the images below for Output:
 
 <br/>
 <div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/cowin-dashbaord-output.gif" alt="" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
+    <img src="https://assets.ccbp.in/frontend/content/react-js/cowin-dashbaord-output.gif" alt="cowin-dashboard-output" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
 </div>
 <br/>
 
@@ -33,28 +33,29 @@ In this project, let's build a **CoWIN Dashboard** by applying the concepts we h
 
 - Download dependencies by running `npm install`
 - Start up the app using `npm start`
+
 </details>
 
-### Completion Instructions
+### Completed Following Instructions
 
 <details>
-<summary>Functionality to be added</summary>
+<summary>Functionality added</summary>
 <br/>
 
-The app must have the following functionalities
+The app has the following functionalities:
 
-- When the page is opened,
-  - An HTTP GET request should be made to **covidVaccinationDataApiUrl**
-  - **_loader_** should be displayed while the HTTP request is fetching the data
-  - After the data is fetched successfully, the response received should be displayed using different charts from `recharts`
-  - The last 7 days vaccination data should be displayed using the `BarChart` component from `recharts`
-  - The data for vaccination by gender and vaccination by age should be displayed as two different pie charts using the `PieChart` component from `recharts`
-  - If the HTTP GET request made is unsuccessful, then the [FailureView](https://assets.ccbp.in/frontend/react-js/api-failure-view.png) should be displayed
+- When the page loads, an HTTP GET request is made to `https://apis.ccbp.in/covid-vaccination-data`
+- A loader is displayed while the request is in progress
+- Upon successful data retrieval:
+  - A **Bar Chart** is used to show vaccination coverage over the last 7 days
+  - Two **Pie Charts** are used to display:
+    - Vaccination by gender
+    - Vaccination by age
+- If the request fails, a **Failure View** image is shown
 
 </details>
 
 <details>
-
 <summary>API Requests & Responses</summary>
 <br/>
 
@@ -66,9 +67,9 @@ The app must have the following functionalities
 
 #### Description:
 
-Returns a response containing the list of Products
+Returns a response with vaccination statistics
 
-#### Success Response
+#### Success Response:
 
 ```json
 {
@@ -114,7 +115,7 @@ Returns a response containing the list of Products
 <summary>Implementation Files</summary>
 <br/>
 
-Use these files to complete the implementation:
+Used these files to complete the implementation:
 
 - `src/components/CowinDashboard/index.js`
 - `src/components/CowinDashboard/index.css`
@@ -134,9 +135,7 @@ Use these files to complete the implementation:
 
 <br/>
 
-**The following instructions are required for the tests to pass**
-
-- Wrap the Loader component with an HTML container element and add the `data-testid` attribute value as `loader` to it
+- Loader is wrapped with a container and has `data-testid="loader"`:
 
   ```jsx
   <div data-testid="loader">
@@ -144,25 +143,23 @@ Use these files to complete the implementation:
   </div>
   ```
 
-- Provide `width` and `height` to the respective chart component to make the charts visible on the page <br> For example:
+- Charts are provided with `width` and `height` as **numbers**:
 
   ```jsx
   <BarChart width={1000} height={300} />
   ```
 
-  - Provide `width` and `height` as **number**
-
-  - Achieve this CoWIN Dashboard on desktop devices. You can try different charts provided by the `recharts` package with customized data
+- Achieved this layout for desktop devices using the `recharts` library with customized props
 
 </details>
 
-### Resources
+### Resources Used
 
 <details>
 <summary>Image URLs</summary>
 
-- [https://assets.ccbp.in/frontend/react-js/api-failure-view.png](https://assets.ccbp.in/frontend/react-js/api-failure-view.png) alt should be **failure view**
-- [https://assets.ccbp.in/frontend/react-js/cowin-logo.png](https://assets.ccbp.in/frontend/react-js/cowin-logo.png) alt should be **website logo**
+- [https://assets.ccbp.in/frontend/react-js/api-failure-view.png](https://assets.ccbp.in/frontend/react-js/api-failure-view.png) – alt: **failure view**
+- [https://assets.ccbp.in/frontend/react-js/cowin-logo.png](https://assets.ccbp.in/frontend/react-js/cowin-logo.png) – alt: **website logo**
 
 </details>
 
@@ -184,7 +181,6 @@ Use these files to complete the implementation:
 <div style="background-color: #5a8dee; width: 150px; padding: 10px; color: black">Hex: #5a8dee</div>
 <div style="background-color: #2cc6c6; width: 150px; padding: 10px; color: black">Hex: #2cc6c6</div>
 <div style="background-color: #6c757d; width: 150px; padding: 10px; color: black">Hex: #6c757d</div>
-<div style="background-color: #5a8dee; width: 150px; padding: 10px; color: black">Hex: #5a8dee</div>
 
 </details>
 
@@ -195,9 +191,11 @@ Use these files to complete the implementation:
 
 </details>
 
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code**.
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
+### Conclusion
+
+- 💉 This project demonstrates the use of `recharts`, API data handling, and conditional rendering to build a responsive and data-driven CoWIN Dashboard.
+- Thanks for checking out my CoWIN Dashboard App! It showcases my skills in API integration, chart rendering, and responsive layout with React.
+
+- 🔗 Check it out here: [https://cowindashboard.ccbp.tech]
+
+Happy coding! 🚀
